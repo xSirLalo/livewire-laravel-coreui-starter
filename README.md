@@ -15,7 +15,7 @@ A Laravel starter project with Livewire and CoreUI integration, ready to use for
 Create a new project using Composer:
 
 ```bash
-composer create-project your-vendor/livewire-laravel-coreui-starter {project_name} --stability=dev
+composer create-project xsirlalo/livewire-laravel-coreui-starter {project_name} --stability=dev
 ```
 
 Replace `{project_name}` with your desired project name.
