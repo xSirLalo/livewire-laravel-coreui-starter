@@ -1,0 +1,29 @@
+// Main styles for this application
+@use "@coreui/coreui/scss/coreui";
+@use "vendor/simplebar";
+@use "styles";
+@use "examples";
+@use "scrollbar";
+
+// Font Awesome styles
+@import "/node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+// Vendor styles
+@import "/node_modules/simplebar/dist/simplebar.css";
+@import "/node_modules/@coreui/icons/css/brand.min.css";
+@import "/node_modules/@coreui/icons/css/flag.min.css";
+@import "/node_modules/@coreui/icons/css/free.min.css";
+
+.fade-out {
+    animation: fadeOut 2s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
