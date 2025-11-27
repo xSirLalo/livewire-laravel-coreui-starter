@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "xsirlalo/livewire-laravel-coreui-starter",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "A Laravel starter project with Livewire and CoreUI integration.",
+    "keywords": ["laravel", "livewire", "coreui", "starter", "template"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
