@@ -11,7 +11,7 @@ class UserIndex extends Component
 
     public $module_name = 'user';
     public $module_name_plural = 'users';
-    public $module_icon = 'fas fa-cube';
+    public $module_icon = 'fas fa-users';
     public $module_action = 'List';
 
     public function render()
