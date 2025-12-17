@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Livewire\Forms\{{}};
+
+use App\Models\{{}};
+use Livewire\Attributes\Validate;
+use Livewire\Form;
+
+class {{}}CreateForm extends Form
+{
+    #[Validate('required|string')]
+    public $name;
+
+    #[Validate('required|string')]
+    public $description;
+
+    public function save()
+    {
+        $this->validate();
+
+        {{}}::create([
+            'name' => $this->name,
+            'description' => $this->description,
+        ]);
+
+        $this->pull();
+    }
+}

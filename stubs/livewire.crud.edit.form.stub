@@ -1,0 +1,47 @@
+<?php
+
+namespace App\Livewire\Forms\{{}};
+
+use App\Models\{{}};
+use Livewire\Attributes\Validate;
+use Livewire\Form;
+
+class {{}}EditForm extends Form
+{
+    public $id;
+
+    #[Validate('required|string')]
+    public $name;
+
+    #[Validate('required|string')]
+    public $description;
+
+    public function loadData($id)
+    {
+        $module_model = {{}}::findOrFail($id);
+
+        $this->id = $module_model->id;
+        $this->name = $module_model->name;
+        $this->description = $module_model->description;
+    }
+
+    public function save()
+    {
+        $this->validate();
+
+        $module_model = {{}}::findOrFail($this->id);
+
+        $module_model->update([
+            'name' => $this->name,
+            'description' => $this->description,
+        ]);
+
+        $this->pull();
+    }
+
+    public function destroy($id)
+    {
+        $module_model = {{}}::findOrFail($id);
+        $module_model->delete();
+    }
+}

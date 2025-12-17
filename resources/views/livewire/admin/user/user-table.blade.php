@@ -1,0 +1,58 @@
+<div>
+    <x-admin.table-filters :search_placeholder="'Buscar por id y nombre'" />
+    <x-admin.table>
+        <x-slot name="thead">
+            <tr>
+                <th>{{ __('ID') }}</th>
+                <th>{{ __('Name') }}</th>
+                <th>{{ __('Email') }}</th>
+                <th>{{ __('Created At') }}</th>
+                <th>{{ __('Actions') }}</th>
+            </tr>
+        </x-slot>
+        <x-slot name="tbody">
+            @foreach ($data as $item)
+                <tr>
+                    <td>{{ $item->id }}</td>
+                    <td class="text-nowrap">
+                        <a class="text-decoration-none" href="{{ route("admin.$module_name.show", $item->id) }}">{{ $item->name }}</a>
+                    </td>
+                    <td>{{ $item->email }}</td>
+                    <td data-coreui-toggle="tooltip" title="{{ $item->created_at->isoFormat('LLLL') }}" style="cursor: help">{{ $item->created_at->diffForHumans() }}</td>
+                    <td>
+                        <div class="btn-group dropstart">
+                            <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-coreui-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-gears fa-fw"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href='{{ route("admin.$module_name.edit", $item->id) }}'>
+                                        <i class="fas fa-pencil-alt fa-fw me-1"></i>{{ __('Edit') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <button type="button" class="dropdown-item" wire:click="delete({{ $item->id }})">
+                                        <i class="fas fa-trash fa-fw me-1"></i>{{ __('Delete') }}
+                                    </button>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href='{{ route("admin.$module_name.show", $item->id) }}'>
+                                        <i class="fas fa-eye fa-fw me-1"></i>{{ __('Detail') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+        </x-slot>
+    </x-admin.table>
+    @if ($data->count())
+        <div>
+            {{ $data->onEachSide(0)->links() }}
+        </div>
+    @endif
+</div>
