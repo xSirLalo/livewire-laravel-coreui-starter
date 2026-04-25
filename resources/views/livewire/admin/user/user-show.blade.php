@@ -15,9 +15,9 @@
         <x-slot name="module_icon">{{ $module_icon }}</x-slot>
         <x-slot name="module_action">{{ $module_action }}</x-slot>
         <x-slot name="toolbar">
-            <x-admin.button-back />
-            <x-admin.button-link route='{{ route("admin.$module_name.index") }}' theme="secondary" icon="fas fa-list" title="{{ __('List of') . ' ' . __(Str::title($module_name_plural)) }}" />
-            <x-admin.button-link route='{{ route("admin.$module_name.edit", $module_model->id) }}' theme="info" icon="fas fa-pencil-alt" title="{{ __('Edit') . ' ' . __(Str::title($module_name)) }}" />
+            <x-admin.action back />
+            <x-admin.action route="admin.{{ $module_name }}.index" theme="secondary" icon="list" title="{{ __('List of') . ' ' . __(Str::title($module_name_plural)) }}" />
+            <x-admin.action href='{{ route("admin.$module_name.edit", $module_model->id) }}' theme="info" icon="pencil-alt" title="{{ __('Edit') . ' ' . __(Str::title($module_name)) }}" />
         </x-slot>
         <x-admin.table :center="true">
             <x-slot name="thead">

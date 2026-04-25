@@ -15,20 +15,20 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Favicon -->
-    <link href="assets/favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
-    <link href="assets/favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
-    <link href="assets/favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-    <link href="assets/favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
-    <link href="assets/favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-    <link href="assets/favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
-    <link href="assets/favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
-    <link href="assets/favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
-    <link href="assets/favicon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
-    <link type="image/png" href="assets/favicon/android-icon-192x192.png" rel="icon" sizes="192x192">
-    <link type="image/png" href="assets/favicon/favicon-32x32.png" rel="icon" sizes="32x32">
-    <link type="image/png" href="assets/favicon/favicon-96x96.png" rel="icon" sizes="96x96">
-    <link type="image/png" href="assets/favicon/favicon-16x16.png" rel="icon" sizes="16x16">
-    <link href="assets/favicon/manifest.json" rel="manifest">
+    <link href="{{ asset('assets/favicon/apple-icon-57x57.png')  }}" rel="apple-touch-icon" sizes="57x57">
+    <link href="{{ asset('assets/favicon/apple-icon-60x60.png')  }}" rel="apple-touch-icon" sizes="60x60">
+    <link href="{{ asset('assets/favicon/apple-icon-72x72.png')  }}" rel="apple-touch-icon" sizes="72x72">
+    <link href="{{ asset('assets/favicon/apple-icon-76x76.png')  }}" rel="apple-touch-icon" sizes="76x76">
+    <link href="{{ asset('assets/favicon/apple-icon-114x114.png')  }}" rel="apple-touch-icon" sizes="114x114">
+    <link href="{{ asset('assets/favicon/apple-icon-120x120.png')  }}" rel="apple-touch-icon" sizes="120x120">
+    <link href="{{ asset('assets/favicon/apple-icon-144x144.png')  }}" rel="apple-touch-icon" sizes="144x144">
+    <link href="{{ asset('assets/favicon/apple-icon-152x152.png')  }}" rel="apple-touch-icon" sizes="152x152">
+    <link href="{{ asset('assets/favicon/apple-icon-180x180.png')  }}" rel="apple-touch-icon" sizes="180x180">
+    <link type="image/png" href="{{ asset('assets/favicon/android-icon-192x192.png')  }}" rel="icon" sizes="192x192">
+    <link type="image/png" href="{{ asset('assets/favicon/favicon-32x32.png')  }}" rel="icon" sizes="32x32">
+    <link type="image/png" href="{{ asset('assets/favicon/favicon-96x96.png')  }}" rel="icon" sizes="96x96">
+    <link type="image/png" href="{{ asset('assets/favicon/favicon-16x16.png')  }}" rel="icon" sizes="16x16">
+    <link href="{{ asset('assets/favicon/manifest.json')  }}" rel="manifest">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">

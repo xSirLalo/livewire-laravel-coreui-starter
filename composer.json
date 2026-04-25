@@ -6,7 +6,7 @@
     "keywords": ["laravel", "livewire", "coreui", "starter", "template"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "bjeavons/zxcvbn-php": "^1.4",
         "jantinnerezo/livewire-alert": "^4.0",
         "laravel/framework": "^12.0",

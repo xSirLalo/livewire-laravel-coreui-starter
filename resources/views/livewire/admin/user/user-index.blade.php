@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-4">
     <x-slot name="breadcrumb">
         <x-admin.breadcrumb>
             @foreach ($this->getBreadcrumbItems() as $item)
@@ -15,7 +15,7 @@
         <x-slot name="module_icon">{{ $module_icon }}</x-slot>
         <x-slot name="module_action">{{ $module_action }}</x-slot>
         <x-slot name="toolbar">
-            <x-admin.button-link route='{{ route("admin.$module_name.create") }}' theme="primary" icon="fas fa-plus" title="{{ __('Add') . ' ' . __(Str::title($module_name)) }}" />
+            <x-admin.action route="admin.{{ $module_name }}.create" theme="primary" icon="plus" title="{{ __('Add') . ' ' . __(Str::title($module_name)) }}" />
         </x-slot>
         <livewire:admin.user.user-table :$module_name lazy />
     </x-admin.card-module>

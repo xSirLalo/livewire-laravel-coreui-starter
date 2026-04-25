@@ -16,18 +16,18 @@
         <x-slot name="module_icon">{{ $module_icon }}</x-slot>
         <x-slot name="module_action">{{ $module_action }}</x-slot>
         <x-slot name="toolbar">
-            <x-admin.button-back />
-            <x-admin.button-link route='{{ route("admin.$module_name.index") }}' theme="secondary" icon="fas fa-list" title="{{ __('List of') . ' ' . __(Str::title($module_name_plural)) }}" />
+            <x-admin.action back />
+            <x-admin.action route="admin.{{ $module_name }}.index" theme="secondary" icon="list" title="{{ __('List of') . ' ' . __(Str::title($module_name_plural)) }}" />
         </x-slot>
         <form wire:submit="store" onkeydown="return event.key != 'Enter';" autocomplete="off">
             <x-admin.card class="mb-3">
                 <x-slot name="title">General</x-slot>
                 <div class="row g-2">
                     <div class="col-md-12">
-                        <x-admin.input label="{{ __('Name') }}" input="form.name" required="true" />
+                        <x-admin.input label="{{ __('Name') }}" model="form.name" required />
                     </div>
                     <div class="col-md-12">
-                        <x-admin.input label="{{ __('Email') }}" input="form.email" />
+                        <x-admin.input label="{{ __('Email') }}" model="form.email" />
                     </div>
                     <div class="col-md-12">
                         <div class="input-group">
@@ -71,8 +71,8 @@
                 </div>
             </x-admin.card>
             <div class="float-end">
-                <x-admin.button-link route='{{ route("admin.$module_name.index") }}' theme="warning" icon="fas fa-x" title="{{ __('Cancel') }}" />
-                <x-admin.button-action theme="primary" icon="fas fa-floppy-disk" title="{{ __('Save') . ' ' . __(Str::title($module_name)) }}" wireAction="store" />
+                <x-admin.action route="admin.{{ $module_name }}.index" theme="warning" icon="x" title="{{ __('Cancel') }}" />
+                <x-admin.action theme="primary" icon="floppy-disk" title="{{ __('Save') . ' ' . __(Str::title($module_name)) }}" target="store" />
             </div>
         </form>
     </x-admin.card-module>
