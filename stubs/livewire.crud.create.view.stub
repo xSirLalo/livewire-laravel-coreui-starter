@@ -1,0 +1,40 @@
+<div class="container">
+    <x-slot name="breadcrumb">
+        <x-admin.breadcrumb>
+            @foreach ($this->getBreadcrumbItems() as $item)
+                @if ($item['active'])
+                    <x-admin.breadcrumb-item type="active">{{ $item['title'] }}</x-admin.breadcrumb-item>
+                @else
+                    <x-admin.breadcrumb-item route="{{ $item['route'] }}">{{ $item['title'] }}</x-admin.breadcrumb-item>
+                @endif
+            @endforeach
+        </x-admin.breadcrumb>
+    </x-slot>
+    <x-admin.validation-errors />
+    <x-admin.card-module>
+        <x-slot name="module_name">{{ $module_name_plural }}</x-slot>
+        <x-slot name="module_icon">{{ $module_icon }}</x-slot>
+        <x-slot name="module_action">{{ $module_action }}</x-slot>
+        <x-slot name="toolbar">
+            <x-admin.button-back />
+            <x-admin.button-link route='{{ route("admin.$module_name.index") }}' theme="secondary" icon="fas fa-list" title="{{ __('List of') . ' ' . __(Str::title($module_name_plural)) }}" />
+        </x-slot>
+        <form wire:submit="store" onkeydown="return event.key != 'Enter';" autocomplete="off">
+            <x-admin.card class="mb-3">
+                <x-slot name="title">General</x-slot>
+                <div class="row g-2">
+                    <div class="col-md-12">
+                        <x-admin.input label="{{ __('Name') }}" input="form.name" required="true" />
+                    </div>
+                    <div class="col-md-12">
+                        <x-admin.textarea label="{{ __('Description') }}" input="form.description" />
+                    </div>
+                </div>
+            </x-admin.card>
+            <div class="float-end">
+                <x-admin.button-link route='{{ route("admin.$module_name.index") }}' theme="warning" icon="fas fa-x" title="{{ __('Cancel') }}" />
+                <x-admin.button-action theme="primary" icon="fas fa-floppy-disk" title="{{ __('Save') . ' ' . __(Str::title($module_name)) }}" wireAction="store" />
+            </div>
+        </form>
+    </x-admin.card-module>
+</div>

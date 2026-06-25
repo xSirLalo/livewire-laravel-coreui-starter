@@ -48,9 +48,7 @@
                     <i class="cil-menu"></i>
                 </button>
                 <ul class="header-nav d-none d-lg-flex">
-                    <li class="nav-item"><a class="nav-link" href="#" target="_blank">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" target="_blank">Users</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" target="_blank">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('web.home') }}" target="_blank">Website</a></li>
                 </ul>
                 <ul class="header-nav ms-auto">
                     <li class="nav-item">
@@ -120,7 +118,7 @@
                             <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold my-2">
                                 <div class="fw-semibold">Settings</div>
                             </div>
-                            <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                            <a class="dropdown-item" href="{{ route('admin.profile.edit') }}">
                                 <i class="cil-user icon me-2"></i> {{ __('Profile') }}
                             </a>
                             <a class="dropdown-item" href="#">
@@ -155,6 +153,7 @@
                 </nav>
             </div>
         </header>
+        <x-admin.notifications />
         <main class="body flex-grow-1">
             {{ $slot }}
         </main>

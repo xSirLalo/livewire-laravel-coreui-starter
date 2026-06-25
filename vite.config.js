@@ -11,4 +11,27 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'vendor': [
+                        'axios',
+                        '@coreui/coreui',
+                    ],
+                    'charts': [
+                        'chart.js',
+                        '@coreui/chartjs',
+                        '@coreui/utils',
+                    ],
+                },
+            },
+        },
+        chunkSizeWarningLimit: 1000,
+    },
+    optimizeDeps: {
+        exclude: [
+            '@coreui/icons/svg/flag/*.svg',
+        ],
+    },
 });

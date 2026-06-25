@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Livewire\{{}};
+
+use App\Models\{{}};
+use App\Traits\HasBreadcrumb;
+use Livewire\Component;
+
+class {{}}Show extends Component
+{
+    use HasBreadcrumb;
+
+    public $module_name = '{{}}';
+    public $module_name_plural = '{{}}';
+    public $module_icon = 'fas fa-cube';
+    public $module_action = 'Detail';
+    public $module_model;
+
+    public function mount($id)
+    {
+        $this->module_model = {{}}::find($id);
+    }
+
+    public function render()
+    {
+        return view('livewire.{{}}.{{}}-show');
+    }
+}
